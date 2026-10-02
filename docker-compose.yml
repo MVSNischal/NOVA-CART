@@ -1,0 +1,13 @@
+services:
+  nova-cart:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:///./nova_cart.db
+      ENV: production
+      SECRET_KEY: change-me
+    volumes:
+      - nova_data:/app/backend
+volumes:
+  nova_data:
